@@ -23,7 +23,7 @@ Then('Druk op type: {string} met naam: {string} met index: {string} op tab: {str
 Then('Header button: {string} value: {string} met index: {string} op tab: {string}', async (type,button,index, tab) => {
     const tasApp = new TASapp(page);
     await tasApp.drukOpPage.headernavigatie(type,index,button,tab);
-    log.silly("Header button: " + type + " value: " + button + " met index: " + index + " op tab: " + tab);
+    log.silly("Druk op Header button: " + type + " value: " + button + " met index: " + index + " op tab: " + tab);
 
 
     

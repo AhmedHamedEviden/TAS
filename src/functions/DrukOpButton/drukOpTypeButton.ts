@@ -26,7 +26,7 @@ export class DrukOpTypeButton {
     this.page = page;
     this.parentLocator = this.page.locator('[class="page-wrapper"]');
     this.headerBlock = this.parentLocator.locator('[class="header content"]');
-    this.hamburgerMenu = this.headerBlock.locator('[data-block="dropdown"]');
+    this.hamburgerMenu = this.headerBlock.locator('[data-block="dropdown"]>span>div>div>div');
     this.logo=this.headerBlock.locator('[class="logo"]');
     this.zoekenInvullen = this.headerBlock.locator('[placeholder="Zoeken"]');
     this.accountLogo = this.headerBlock.locator('[class="header__account-icon"]');
@@ -88,14 +88,20 @@ export class DrukOpTypeButton {
 
     switch (button) {
         case "Hamburger menu":
+            await this.page.waitForTimeout(800);
+            await this.hamburgerMenu.nth(index).hover({timeout: 2000});
+            await this.hamburgerMenu.nth(index).waitFor({ state: "visible" });
             await this.hamburgerMenu.nth(index).click();
             break;
 
         case "Logo":
+            await this.page.waitForTimeout(500);
             await this.logo.nth(index).click();
             break;
 
         case "Zoeken":
+            await this.page.waitForTimeout(500);
+            await this.zoekenInvullen.nth(index).waitFor({ state: "visible" });
             await this.zoekenInvullen.nth(index).click();
             await this.zoekenInvullen.nth(index).fill(value);
             await this.zoekenInvullen.nth(index).press("Enter");
@@ -103,10 +109,14 @@ export class DrukOpTypeButton {
             break;
 
         case "Account":
+            await this.page.waitForTimeout(500);
+            await this.accountLogo.nth(index).waitFor({ state: "visible" });
             await this.accountLogo.nth(index).click();
             break;
 
         case "Winkelmandje":
+            await this.page.waitForTimeout(500);
+            await this.winkelMandje.nth(index).waitFor({ state: "visible" });
             await this.winkelMandje.nth(index).click();
             break;
 

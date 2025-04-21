@@ -40,7 +40,10 @@ export class LoginInFunction {
     await this.password.fill(password);
   }
   async PressSubMitButton(){
-    await this.submitbutton.nth(1).click()
+    // await this.page.waitForLoadState("load");
+    // await this.page.waitForTimeout(500);
+    await this.submitbutton.nth(1).waitFor({ state: "visible" });
+    await this.submitbutton.nth(1).click();
   }
      }
 
