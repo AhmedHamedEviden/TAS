@@ -41,6 +41,14 @@ export class SideBarPage{
       {return}
 }
 
+async getSubCategories(categoryName: string,index: number,tab: number){
+  const targetTab = await new NavigeerNaarTab(this.page).navigeerNaarTab(tab);
+  if (targetTab){
+  return await new SideBar(targetTab).getSubCategories(categoryName,index);
+  }
+  {return}
+}
+
 
    
 

@@ -18,8 +18,9 @@ Feature: Login
     When Login met gebruikersnaam: "<gebruikersnaam>" en wachtwoord: "<wachtwoord>" op tab: "0"
     When Header button: "Logo" value: "N.V.T" met index: "0" op tab: "0"
     When Header button: "Hamburger menu" value: "N.V.T" met index: "0" op tab: "0"
-    Then Print alle sideBar items voor index: "0" op tab: "0"
-    Then Print sideBar item voor index: "1" op tab: "0"
+    #Then Print alle sideBar items voor index: "0" op tab: "0"
+    # Then Print sideBar item voor index: "0" op tab: "0"
+    Then Sub categories voor categorie: "Elektronica" met index: "0" op tab: "0"
 
     Examples:
       | Scenario | url                        | headerButton | headerValue | gebruikersnaam                   | wachtwoord      | naam                     |

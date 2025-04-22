@@ -25,6 +25,14 @@ Then('Print alle sideBar items voor index: {string} op tab: {string}', async (in
    
 });
 
+Then('Sub categories voor categorie: {string} met index: {string} op tab: {string}', async (categoryName,index,tab) => {
+    const tasApp = new TASapp(page);
+    await tasApp.sideBarPage.getSubCategories(categoryName,index,tab);
+    log.silly("Sub categories voor categorie: " + categoryName + " met index: " + index + " op tab: " + tab);
+    
+   
+});
+
 
 
 
