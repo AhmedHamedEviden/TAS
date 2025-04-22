@@ -20,7 +20,7 @@ Feature: Login
     When Header button: "Hamburger menu" value: "N.V.T" met index: "0" op tab: "0"
     #Then Print alle sideBar items voor index: "0" op tab: "0"
     # Then Print sideBar item voor index: "0" op tab: "0"
-    Then Sub categories voor categorie: "Elektronica" met index: "0" op tab: "0"
+    Then Sub categories voor categorie: "Keukenapparaten" met index: "0" op tab: "0"
 
     Examples:
       | Scenario | url                        | headerButton | headerValue | gebruikersnaam                   | wachtwoord      | naam                     |
